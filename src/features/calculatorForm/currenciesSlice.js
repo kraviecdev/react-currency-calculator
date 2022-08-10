@@ -6,6 +6,12 @@ const currenciesSlice = createSlice({
         amount: '',
         ownedCurrency: "EUR",
         targetCurrency: "USD",
+        result: {
+            sourceAmount: '',
+            targetresult: 0,
+            ownedRate: 0,
+            targetRate: 0,
+        },
     },
     reducers: {
         handleAmountChange: (state, action) => {
@@ -16,7 +22,17 @@ const currenciesSlice = createSlice({
         },
         handleTargetCurrency: (state, action) => {
             state.targetCurrency = action.payload;
-        }
+        },
+        handleSwichCurrencies: state => {
+            const actualOwnedCurrency = state.ownedCurrency;
+            const actualTargetCurrency = state.targetCurrency;
+
+            state.ownedCurrency = actualTargetCurrency;
+            state.targetCurrency = actualOwnedCurrency;
+        },
+        handleResult: (state, action) => {
+            
+        },
     },
 });
 
@@ -24,6 +40,7 @@ export const {
     handleAmountChange,
     handleOwnedCurrency,
     handleTargetCurrency,
+    handleSwichCurrencies,
 } = currenciesSlice.actions
 
 const selectCurrenciesState = state => state.currencies;

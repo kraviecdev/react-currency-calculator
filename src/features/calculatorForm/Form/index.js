@@ -21,14 +21,15 @@ import {
     selectOwnedCurrency,
     handleOwnedCurrency, 
     selectTargetCurrency,
-    handleTargetCurrency
+    handleTargetCurrency,
+    handleSwichCurrencies,
 } from "../currenciesSlice";
 
 const Form = () => {
 
     const amount = useSelector(selectAmount);
-    const ownedCurrency = useSelector(selectOwnedCurrency);
-    const targetCurrency = useSelector(selectTargetCurrency);
+    let ownedCurrency = useSelector(selectOwnedCurrency);
+    let targetCurrency = useSelector(selectTargetCurrency);
     const dispatch = useDispatch();
 
     const { ratesData } = useRatesData();
@@ -38,6 +39,10 @@ const Form = () => {
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
     }, [ownedCurrency, targetCurrency]);
+
+    const currencySwitch = () => {
+        dispatch(handleSwichCurrencies());
+    };
 
     const calculateResult = () => {
         const ownedRate = ratesData.rates[ownedCurrency]
@@ -55,9 +60,6 @@ const Form = () => {
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult();
-    };
-
-    const currencySwitch = () => {
     };
 
     return (
