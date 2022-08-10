@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useEffect } from "react";
 import {
     Select,
@@ -15,26 +14,29 @@ import {
 import { useRatesData } from "./useRates";
 import Result from "../Result";
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    selectAmount, 
-    handleAmountChange, 
+import {
+    selectAmount,
+    handleAmountChange,
     selectOwnedCurrency,
-    handleOwnedCurrency, 
+    handleOwnedCurrency,
     selectTargetCurrency,
     handleTargetCurrency,
     handleSwichCurrencies,
+    handleResult,
+    selectInitialResultState,
 } from "../currenciesSlice";
 
 const Form = () => {
 
     const amount = useSelector(selectAmount);
-    let ownedCurrency = useSelector(selectOwnedCurrency);
-    let targetCurrency = useSelector(selectTargetCurrency);
+    const ownedCurrency = useSelector(selectOwnedCurrency);
+    const targetCurrency = useSelector(selectTargetCurrency);
+    const result = useSelector(selectInitialResultState);
     const dispatch = useDispatch();
 
     const { ratesData } = useRatesData();
 
-    const [result, setResult] = useState();
+    console.log(result);
 
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
@@ -45,16 +47,14 @@ const Form = () => {
     };
 
     const calculateResult = () => {
-        const ownedRate = ratesData.rates[ownedCurrency]
-        const targetRate = ratesData.rates[targetCurrency];
-        setResult(
-            {
-                sourceAmount: +amount,
-                targetResult: +amount * targetRate,
-                ownedRate,
-                targetRate
-            }
-        );
+        const ownedRates = ratesData.rates[ownedCurrency]
+        const targetRates = ratesData.rates[targetCurrency];
+        dispatch(handleResult({
+            sourceAmount: +amount,
+            targetResult: +amount * targetRates,
+            ownedRate: ownedRates,
+            targetRate: targetRates,
+        }));
     };
 
     const onFormSubmit = (event) => {
@@ -114,8 +114,6 @@ const Form = () => {
                 </StyledWrapper>
                 <Result
                     result={result}
-                    targetCurrency={targetCurrency}
-                    ownedCurrency={ownedCurrency}
                 />
                 <StyledAnnotatnion date >
                     Exchange rates valid as of:<br />
