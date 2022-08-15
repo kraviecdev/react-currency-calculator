@@ -61,18 +61,7 @@ export const StyledButton = styled.button`
     border-radius: 2px;
     border: 2px solid ${({ theme }) => theme.colors.backgroundAddPrimary};
 
-    ${({ changeButton }) => changeButton && css`
-        padding: 0;
-        border: none;
-        height: 26px;
-        border-radius: 50%;
-    `}
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
-        margin-bottom: 10px;
-    }
-
-        &:hover {
+    &:hover {
         color: ${({ theme }) => theme.colors.colorSeconadry};
         box-shadow: inset 0-100px 0 0 ${({ theme }) => theme.colors.backgroundAddPrimary};
     }
@@ -80,8 +69,27 @@ export const StyledButton = styled.button`
         &:active {
         transform: scale(0.9);
     }
+
+    ${({ changeButton }) => changeButton && css`
+        padding: 0;
+        border: none;
+        height: 26px;
+        border-radius: 50%;
+
+        &:hover{
+            box-shadow: none;
+        };
+    `}
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+        margin-bottom: 10px;
+    }
 `;
 
 export const ChangeIcon = styled(ChangeButtonIcon)`
     fill: ${({ theme }) => theme.colors.colorPrimary};
+
+    &:hover {
+        fill: ${({ theme }) => theme.colors.backgroundAddPrimary};
+    }
 `;
