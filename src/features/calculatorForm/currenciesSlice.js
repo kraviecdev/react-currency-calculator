@@ -3,19 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const currenciesSlice = createSlice({
     name: "currencies",
     initialState: {
-        amount: '',
         ownedCurrency: "EUR",
         targetCurrency: "USD",
         result: {
-            sourceAmount: '',
-            targetResult: 0,
-            ownedRate: 1,
+            initialAmount: '',
+            caltulatedResult: 0,
             targetRate: null,
         },
     },
     reducers: {
         handleAmountChange: (state, action) => {
-            state.amount = action.payload;
+            state.result.initialAmount = action.payload;
         },
         handleOwnedCurrency: (state, action) => {
             state.ownedCurrency = action.payload;
@@ -24,11 +22,9 @@ const currenciesSlice = createSlice({
             state.targetCurrency = action.payload;
         },
         handleSwichCurrencies: state => {
-            const actualOwnedCurrency = state.ownedCurrency;
-            const actualTargetCurrency = state.targetCurrency;
-
-            state.ownedCurrency = actualTargetCurrency;
-            state.targetCurrency = actualOwnedCurrency;
+            const initialOwnedCurrency = state.ownedCurrency
+            state.ownedCurrency = state.targetCurrency;
+            state.targetCurrency = initialOwnedCurrency;
         },
         handleResult: (state, action) => {
             state.result = action.payload;
@@ -45,10 +41,11 @@ export const {
 } = currenciesSlice.actions
 
 const selectCurrenciesState = state => state.currencies;
+const selectResultState = state => selectCurrenciesState(state).result;
 
-export const selectAmount = state => selectCurrenciesState(state).amount;
+export const selectAmount = state => selectResultState(state).initialAmount;
+export const selectInitialResultState = state => selectCurrenciesState(state).result;
 export const selectOwnedCurrency = state => selectCurrenciesState(state).ownedCurrency;
 export const selectTargetCurrency = state => selectCurrenciesState(state).targetCurrency;
-export const selectInitialResultState = state => selectCurrenciesState(state).result;
 
 export default currenciesSlice.reducer;
