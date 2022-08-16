@@ -23,43 +23,38 @@ import {
     handleTargetCurrency,
     handleSwichCurrencies,
     handleResult,
-    selectInitialResultState,
 } from "../currenciesSlice";
 
 const Form = () => {
+    const { ratesData } = useRatesData();
 
     const amount = useSelector(selectAmount);
     const ownedCurrency = useSelector(selectOwnedCurrency);
     const targetCurrency = useSelector(selectTargetCurrency);
-    const result = useSelector(selectInitialResultState);
     const dispatch = useDispatch();
 
-    const { ratesData } = useRatesData();
-
-    console.log(result);
+    const parsedAmount = parseFloat(amount);
 
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
     }, [ownedCurrency, targetCurrency]);
 
-    const currencySwitch = () => {
-        dispatch(handleSwichCurrencies());
-    };
-
     const calculateResult = () => {
-        const ownedRates = ratesData.rates[ownedCurrency]
-        const targetRates = ratesData.rates[targetCurrency];
+        const targetRate = ratesData.rates[targetCurrency]
         dispatch(handleResult({
-            sourceAmount: +amount,
-            targetResult: +amount * targetRates,
-            ownedRate: ownedRates,
-            targetRate: targetRates,
+            initialAmount: parsedAmount,
+            calculatedResult: parsedAmount * targetRate,
+            targetRate: targetRate,
         }));
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult();
+    };
+
+    const currencySwitch = () => {
+        dispatch(handleSwichCurrencies());
     };
 
     return (
@@ -105,16 +100,14 @@ const Form = () => {
                     />
                     <Input
                         fieldName={`${ownedCurrency} Amount*: `}
-                        value={amount}
+                        value={parsedAmount}
                         onChange={({ target }) => dispatch(handleAmountChange(target.value))}
                     />
                 </StyledWrapper>
                 <StyledWrapper button>
                     <StyledButton>Calculate</StyledButton>
                 </StyledWrapper>
-                <Result
-                    result={result}
-                />
+                <Result />
                 <StyledAnnotatnion date >
                     Exchange rates valid as of:<br />
                     <strong>
