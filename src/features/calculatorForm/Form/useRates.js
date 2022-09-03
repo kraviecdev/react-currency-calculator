@@ -22,8 +22,10 @@ export const useRatesData = () => {
         setRatesData({
           state: "success",
           rates,
+          targetRate: rates[targetCurrency],
+          ownedRate: rates[ownedCurrency],
           date,
-        });
+          });
       } catch {
         setRatesData({
           state: "error",
@@ -31,7 +33,7 @@ export const useRatesData = () => {
       }
     };
     getRates();
-  }, [ownedCurrency]);
+  }, [ownedCurrency, targetCurrency]);
 
   return {
     ratesData,
