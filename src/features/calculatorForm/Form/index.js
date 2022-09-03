@@ -1,8 +1,6 @@
-import { useEffect } from "react";
-import {
-    Select,
-    Input
-} from "../Field";
+import { useEffect, useState } from "react";
+import { Select, Input } from "../Field";
+import Result from "../Result";
 import {
     StyledAnnotatnion,
     StyledWrapper,
@@ -12,56 +10,36 @@ import {
     ChangeIcon
 } from "./styled";
 import { useRatesData } from "./useRates";
-import Result from "../Result";
-import { useDispatch, useSelector } from "react-redux";
-import {
-    selectAmount,
-    handleAmountChange,
-    selectOwnedCurrency,
-    handleOwnedCurrency,
-    selectTargetCurrency,
-    handleTargetCurrency,
-    handleSwichCurrencies,
-    handleResult,
-} from "../currenciesSlice";
 
 const Form = () => {
-    const { ratesData } = useRatesData();
+    const {
+        ratesData,
+        ownedCurrency,
+        setOwnedCurrency,
+        targetCurrency,
+        setTargetCurrency,
+    } = useRatesData();
 
-    const amount = useSelector(selectAmount);
-    const ownedCurrency = useSelector(selectOwnedCurrency);
-    const targetCurrency = useSelector(selectTargetCurrency);
-    const dispatch = useDispatch();
+    const [amount, setAmount] = useState();
+    const result = +amount * ratesData.targetRate;
 
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
     }, [ownedCurrency, targetCurrency]);
 
+    const currencySwitch = (event) => {
+        event.preventDefault();
+        setOwnedCurrency(targetCurrency);
+        setTargetCurrency(ownedCurrency);
+    };
+
     const calculateResult = () => {
-        dispatch(handleResult({
-            value: amount * ratesData.targetRate,
-            targetRate: ratesData.targetRate
-        }));
+        return result;
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult();
-    };
-
-    const currencySwitch = (event) => {
-        event.preventDefault();
-        dispatch(handleSwichCurrencies());
-        dispatch(handleResult({
-            value: 0,
-        }));
-    };
-
-    const clearForm = () => {
-        dispatch(handleAmountChange(""));
-        dispatch(handleResult({
-            value: 0,
-        }));
     };
 
     return (
@@ -73,7 +51,7 @@ const Form = () => {
                         fieldName={"From*: "}
                         name={"currency"}
                         value={ownedCurrency}
-                        onChange={({ target }) => dispatch(handleOwnedCurrency(target.value))}
+                        onChange={({ target }) => setOwnedCurrency(target.value)}
                         option={!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
                             <option
                                 key={currency}
@@ -95,7 +73,7 @@ const Form = () => {
                         fieldName={"To*: "}
                         name={"currency"}
                         value={targetCurrency}
-                        onChange={({ target }) => dispatch(handleTargetCurrency(target.value))}
+                        onChange={({ target }) => setTargetCurrency(target.value)}
                         option={!!ratesData.rates && Object.keys(ratesData.rates).map((currency) => (
                             <option
                                 key={currency}
@@ -108,18 +86,20 @@ const Form = () => {
                     <Input
                         fieldName={`${ownedCurrency} Amount*: `}
                         value={amount}
-                        onChange={({ target }) => dispatch(handleAmountChange(target.value))}
+                        onChange={({ target }) => setAmount(target.value)}
                     />
                 </StyledWrapper>
                 <StyledWrapper button>
                     <StyledButton>Calculate</StyledButton>
-                    <StyledButton
-                        onClick={() => clearForm()}
-                    >
-                        Clear
-                    </StyledButton>
                 </StyledWrapper>
-                <Result />
+                <Result
+                    amount={+amount}
+                    ownedCurrency={ownedCurrency}
+                    ownedRate={ratesData.ownedRate}
+                    targetCurrency={targetCurrency}
+                    targetRate={ratesData.targetRate}
+                    result={result.toFixed(2)}
+                />
                 <StyledAnnotatnion date >
                     Exchange rates valid as of:<br />
                     <strong>

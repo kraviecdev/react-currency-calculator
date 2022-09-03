@@ -15,11 +15,11 @@ const currenciesSlice = createSlice({
         handleAmountChange: (state, action) => {
             state.amount = action.payload;
         },
-        handleOwnedCurrency: ({ ownedCurrency }, action) => {
-            ownedCurrency = action.payload;
+        handleOwnedCurrency: (state, action) => {
+            state.ownedCurrency = action.payload;
         },
-        handleTargetCurrency: ({ targetCurrency }, action) => {
-            targetCurrency = action.payload;
+        handleTargetCurrency: (state, action) => {
+            state.targetCurrency = action.payload;
         },
         handleSwichCurrencies: state => {
             const initialOwnedCurrency = state.ownedCurrency

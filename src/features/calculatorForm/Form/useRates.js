@@ -1,12 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectOwnedCurrency, selectTargetCurrency } from "../currenciesSlice";
 
 export const useRatesData = () => {
 
-  const ownedCurrency = useSelector(selectOwnedCurrency);
-  const targetCurrency = useSelector(selectTargetCurrency);
+  const [ownedCurrency, setOwnedCurrency] = useState("EUR");
+  const [targetCurrency, setTargetCurrency] = useState("PLN");
   const [ratesData, setRatesData] = useState({
     state: "success",
   })
@@ -39,5 +37,7 @@ export const useRatesData = () => {
     ratesData,
     ownedCurrency,
     targetCurrency,
+    setOwnedCurrency,
+    setTargetCurrency,
   };
 };
