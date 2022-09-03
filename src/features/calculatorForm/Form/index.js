@@ -33,18 +33,14 @@ const Form = () => {
     const targetCurrency = useSelector(selectTargetCurrency);
     const dispatch = useDispatch();
 
-    const parsedAmount = parseFloat(amount);
-
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
     }, [ownedCurrency, targetCurrency]);
 
     const calculateResult = () => {
-        const targetRate = ratesData.rates[targetCurrency]
         dispatch(handleResult({
-            initialAmount: parsedAmount,
-            calculatedResult: parsedAmount * targetRate,
-            targetRate: targetRate,
+            value: amount * ratesData.targetRate,
+            targetRate: ratesData.targetRate
         }));
     };
 
@@ -53,8 +49,19 @@ const Form = () => {
         calculateResult();
     };
 
-    const currencySwitch = () => {
+    const currencySwitch = (event) => {
+        event.preventDefault();
         dispatch(handleSwichCurrencies());
+        dispatch(handleResult({
+            value: 0,
+        }));
+    };
+
+    const clearForm = () => {
+        dispatch(handleAmountChange(""));
+        dispatch(handleResult({
+            value: 0,
+        }));
     };
 
     return (
@@ -100,12 +107,17 @@ const Form = () => {
                     />
                     <Input
                         fieldName={`${ownedCurrency} Amount*: `}
-                        value={parsedAmount}
+                        value={amount}
                         onChange={({ target }) => dispatch(handleAmountChange(target.value))}
                     />
                 </StyledWrapper>
                 <StyledWrapper button>
                     <StyledButton>Calculate</StyledButton>
+                    <StyledButton
+                        onClick={() => clearForm()}
+                    >
+                        Clear
+                    </StyledButton>
                 </StyledWrapper>
                 <Result />
                 <StyledAnnotatnion date >

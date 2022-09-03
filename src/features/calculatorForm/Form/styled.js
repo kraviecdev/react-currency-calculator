@@ -43,7 +43,8 @@ export const StyledWrapper = styled.div`
         `}
 
         ${({ button }) => button && css`
-            justify-items: end;
+            display: flex;
+            justify-content: flex-end;
         `}
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
