@@ -5,7 +5,6 @@ export const StyledHeader = styled.header`
     top: 0;
     width: 100%;
     padding: 10px;
-    background-color: ${({ theme }) => theme.colors.backgroundPrimary};
 `;
 
 export const Wrapper = styled.div`
@@ -17,8 +16,4 @@ export const Wrapper = styled.div`
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         max-width: 100%;
     }
-`;
-
-export const StyledTitle = styled.h1`
-    margin: 0;
 `;

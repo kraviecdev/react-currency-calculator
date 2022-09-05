@@ -1,11 +1,10 @@
-import { StyledHeader, StyledTitle, Wrapper } from "./styled";
+import { StyledHeader, Wrapper } from "./styled";
 
 const Header = ({ children }) => {
 
     return (
         <StyledHeader >
             <Wrapper>
-                <StyledTitle>Currency Calc</StyledTitle>
                 {children}
             </Wrapper>
         </StyledHeader>
