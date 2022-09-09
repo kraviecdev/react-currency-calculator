@@ -13,7 +13,7 @@ export const Button = styled.button`
 
 export const Info = styled.p`
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.3;
   margin: 0px 12px 0px 0px;
   text-transform: uppercase;
