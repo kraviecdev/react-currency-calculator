@@ -3,8 +3,22 @@ import { css } from "styled-components";
 
 export const StyledResultWrapper = styled.div`
     width: 100%;
-    display: grid;
     grid-gap: 3px;
+    max-height: 0;
+    overflow: hidden;
+
+    @keyframes box-drop {
+        from {
+            max-height: 0;
+        }
+        to {
+            max-height: 300px;
+        }
+    }
+
+    ${({ active }) => active && css`
+        animation: 2s box-drop forwards;
+    `}
 `;
 
 export const StyledResult = styled.p`

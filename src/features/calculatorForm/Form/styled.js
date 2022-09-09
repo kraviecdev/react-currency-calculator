@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { ReactComponent as ChangeButtonIcon } from './changeButton.svg';
 
 export const StyledForm = styled.form`
-    width: 70%;
+    max-width: 1300px;
     margin: 30px auto;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
@@ -11,13 +11,10 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledFieldset = styled.fieldset`
-    border-radius: 2px;
+    border-radius: 10px;
     background: ${({ theme }) => theme.colors.backgroundPrimary};
+    padding: 24px;
     border: none;
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
-        padding: 24px;
-    }
 `;
 
 export const StyledAnnotatnion = styled.p`
