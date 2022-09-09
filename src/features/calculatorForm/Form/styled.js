@@ -2,8 +2,10 @@ import styled, { css } from "styled-components";
 import { ReactComponent as ChangeButtonIcon } from './changeButton.svg';
 
 export const StyledForm = styled.form`
+    position: relative;
     max-width: 1300px;
-    margin: 30px auto;
+    width: 100%;
+    margin: auto;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
         width: 90%;

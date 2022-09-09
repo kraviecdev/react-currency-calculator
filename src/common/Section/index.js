@@ -4,7 +4,6 @@ const Section = ({ children, backgroundSection, isScrolled }) => {
 
     return (
         <StyledSection
-            backgroundSection={backgroundSection}
             isScrolled={isScrolled}
         >
             {children}

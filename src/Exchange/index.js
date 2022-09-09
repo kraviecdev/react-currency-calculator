@@ -5,7 +5,7 @@ import Footer from '../common/Footer';
 import Header from '../common/Header';
 import Container from '../common/Container';
 import Section from '../common/Section';
-import Clock from '../common/Clock'
+import Clock from '../common/Clock';
 
 const Exchange = () => {
 
@@ -15,7 +15,7 @@ const Exchange = () => {
     const updetaScrollPositon = () => {
       setIsScrolled(window.pageYOffset);
     };
-    
+
     window.addEventListener("scroll", updetaScrollPositon);
 
     updetaScrollPositon();
@@ -25,15 +25,15 @@ const Exchange = () => {
 
   return (
     <Container>
-      <Section 
-      isScrolled={isScrolled}
+      <Header
+        isScrolled={isScrolled}
       >
-        <Header>
-          <Clock />
-          <ThemeSwitch />
-        </Header>
-      </Section>
+        <Clock />
+        <ThemeSwitch />
+      </Header>
+      <Section>
         <Form />
+      </Section>
       <Footer />
     </Container>
   );

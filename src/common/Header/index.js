@@ -1,9 +1,11 @@
 import { StyledHeader, Wrapper } from "./styled";
 
-const Header = ({ children }) => {
+const Header = ({ children, isScrolled }) => {
 
     return (
-        <StyledHeader >
+        <StyledHeader 
+            isScrolled={isScrolled}
+        >
             <Wrapper>
                 {children}
             </Wrapper>
