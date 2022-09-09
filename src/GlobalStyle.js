@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
             -moz-osx-font-smoothing: grayscale;
             box-sizing: border-box; 
             transition: 1s cubic-bezier(0.69, 0.15, 0.31, 0.85);
+            font-size: 20px;
+
+            @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
+                font-size: 16px;
+            }
         }
 
         *, ::after, ::before {

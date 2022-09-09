@@ -13,7 +13,7 @@ const App = () => {
 
     return (
         <ThemeProvider theme={isDarkTheme ? dark : light} >
-            <ParticlesBackground options={isDarkTheme ? particlesConfigLight : particlesConfigDark} />
+            <ParticlesBackground options={isDarkTheme ? particlesConfigDark : particlesConfigLight} />
             <GlobalStyle />
             <Exchange />
         </ThemeProvider>
