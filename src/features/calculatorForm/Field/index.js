@@ -28,7 +28,7 @@ export const Input = ({ fieldName, value, onChange }) => {
                 type="number"
                 step="0.01"
                 required
-                placeholder="Write your amount"
+                placeholder="10.00"
             >
             </StyledFormField>
         </StyledLabel>

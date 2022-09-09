@@ -38,13 +38,13 @@ const Form = () => {
         setTargetCurrency(ownedCurrency);
     };
 
-    const calculateResult = () => {
+    const showResult = () => {
         setIsSubmitClicked(true);
     };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult();
+        showResult();
     };
 
     return (
