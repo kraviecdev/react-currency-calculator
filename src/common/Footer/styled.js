@@ -3,21 +3,14 @@ import { ReactComponent as Github } from "./github.svg";
 import { ReactComponent as LinkedIn } from "./linkedin.svg";
 
 export const StyledFooter = styled.footer`
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    margin-top: 50px;
     color: ${({ theme }) => theme.colors.colorSeconadry};
     background: ${({ theme }) => theme.colors.backgroundAddPrimary};
-
-    @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
-        position: inherit;
-    }
 `;
 
 export const StyledFooterWrapper = styled.div`
-    max-width: 70%;
-    margin: auto;
+    max-width: 1300px;
+    margin: 30px auto;
     padding: 12px 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.medium}px){
