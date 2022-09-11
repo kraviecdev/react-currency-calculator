@@ -28,7 +28,7 @@ export const SwitchBody = styled.span`
   width: 47px;
   padding: 2.5px;
   border-radius: 15px;
-  background: ${({ theme }) => theme.colors.backgroundSecondary};
+  background: ${({ theme }) => theme.colors.colorSeconadry};
   border: 1px solid;
   transition: background .3s;
 `;

@@ -27,6 +27,8 @@ const Form = () => {
     const [result, setResult] = useState(0);
     const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
+    const trimmedAmount = parseFloat(amount);
+
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
         setResult(+amount * ratesData.targetRate);
@@ -103,7 +105,7 @@ const Form = () => {
                             <StyledButton>Calculate</StyledButton>
                         </StyledWrapper>
                         <Result
-                            amount={+amount}
+                            amount={trimmedAmount.toFixed(2)}
                             ownedCurrency={ownedCurrency}
                             ownedRate={ratesData.ownedRate}
                             targetCurrency={targetCurrency}
