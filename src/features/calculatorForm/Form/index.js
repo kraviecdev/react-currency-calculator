@@ -32,6 +32,9 @@ const Form = () => {
     useEffect(() => {
         document.title = `Calculate from ${ownedCurrency} to ${targetCurrency}`;
         setResult(+amount * ratesData.targetRate);
+        if (amount === "") {
+            setIsSubmitClicked(false);
+        };
     }, [ownedCurrency, targetCurrency, amount, ratesData.targetRate]);
 
     const currencySwitch = (event) => {
@@ -41,7 +44,7 @@ const Form = () => {
     };
 
     const showResult = () => {
-        setIsSubmitClicked(true);
+        setIsSubmitClicked(true)
     };
 
     const onFormSubmit = (event) => {
