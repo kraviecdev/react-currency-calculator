@@ -7,8 +7,7 @@ export const light = {
     breakpoints,
     colors: {
         backgroundPrimary: "#DDE0E3",
-        backgroundSecondary: "#F4F4F6",
-        backgroundAddPrimary: "#5F85DB", 
+        backgroundAddPrimary: "#3766D2", 
         backgroundAddSecondary: "#90B8F8",
         colorPrimary: "#111213",
         colorSeconadry: "#f3f3f3",
@@ -19,12 +18,11 @@ export const light = {
 export const dark = {
     breakpoints,
     colors: {
-        backgroundPrimary: "#26282B",
-        backgroundSecondary: "#353941",
-        backgroundAddPrimary: "#0252A2", 
-        backgroundAddSecondary: "#90B8F8",
-        colorPrimary: "#f3f3f3",
-        colorSeconadry: "#111213",
-        annotation: "#9b1d20",
+        backgroundPrimary: "#4E7A9F",
+        backgroundAddPrimary: "#192338", 
+        backgroundAddSecondary: "#46619B", 
+        colorPrimary: "#c2c2c2",
+        colorSeconadry: "#F3F3F3",
+        annotation: "#561011", 
     },
 };

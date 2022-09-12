@@ -26,6 +26,10 @@ export const StyledFormField = styled.input`
     border-radius: 5px;
     background: ${({ theme }) => theme.colors.backgroundAddPrimary};
     color: ${({ theme }) => theme.colors.colorSeconadry};
+    
+    &::placeholder {
+        color: ${({ theme }) => theme.colors.colorSeconadry};
+    }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.medium}px) {
         width: 100%;
