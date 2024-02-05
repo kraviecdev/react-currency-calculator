@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-Here you can find -> [**Demo**](https://patrick36212.github.io/react-currency-calculator/)
+Currently there is no available demo to this project.
 
 ## Technologies used in project
 
