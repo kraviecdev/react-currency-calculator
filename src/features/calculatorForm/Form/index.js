@@ -13,7 +13,6 @@ import {
     ChangeIcon
 } from "./styled";
 import { useRatesData } from "./useRates";
-import {formatDate} from "../../../common/Clock/useLocalCurrentDate";
 
 const Form = () => {
     const {
