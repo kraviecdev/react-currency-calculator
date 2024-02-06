@@ -13,6 +13,7 @@ import {
     ChangeIcon
 } from "./styled";
 import { useRatesData } from "./useRates";
+import {formatDate} from "../../../common/Clock/useLocalCurrentDate";
 
 const Form = () => {
     const {
@@ -23,7 +24,7 @@ const Form = () => {
         setTargetCurrency,
     } = useRatesData();
 
-    const [amount, setAmount] = useState();
+    const [amount, setAmount] = useState(null);
     const [result, setResult] = useState(0);
     const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
@@ -119,7 +120,9 @@ const Form = () => {
                         <StyledAnnotatnion date >
                             Exchange rates valid as of:<br />
                             <strong>
-                                {ratesData.date}
+                                {new Date(ratesData.date * 1000).toLocaleDateString("en-GB", {
+                                    dateStyle: "medium"
+                                })}
                             </strong>
                         </StyledAnnotatnion>
                     </>
