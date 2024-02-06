@@ -1,19 +1,25 @@
-import Particles from "react-tsparticles";
-import { tsParticles } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
+import {initParticlesEngine, Particles} from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import {useEffect, useState} from "react";
 
-const ParticlesBackground = ({ options }) => {
-  const particlesInit = async () => {
-    await loadFull(tsParticles);
-  };
+const ParticlesBackground = ({options}) => {
+    const [init, setInit] = useState(false);
 
-  return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      options={options}
-    />
-  );
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            await loadSlim(engine)
+        }).then(
+            setInit(true)
+        )
+    }, []);
+
+    if (init) {
+        return (
+            <Particles
+                id="tsparticles"
+                options={options}
+            />)
+    }
 };
 
 export default ParticlesBackground;
