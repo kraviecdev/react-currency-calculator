@@ -7,17 +7,17 @@ const Footer = () => (
                 {`This project was created during the YouCode course. It covers all the techniques learned in this course. This project is made for practice only, not for profit. Creating web-pages and applications is my passion. If you want to check my work, below you can find more info.`}
             </StyledAbout>
             <StyledFooterHeader>Contact me if my work seems interesting to you!</StyledFooterHeader>
-            <StyledLink href="mailto:patrick36212@gmail.com">
-                patrick36212@gmail.com
+            <StyledLink href="mailto:pkrawczyk@kraviecdev.com">
+                pkrawczyk@kraviecdev.com
             </StyledLink>
             <StyledSocialList>
                 <StyledSocial>
-                    <StyledLink href="https://github.com/patrick36212">
+                    <StyledLink href="https://github.com/kraviecdev">
                         <GithubIcon />
                     </StyledLink>
                 </StyledSocial>
                 <StyledSocial>
-                    <StyledLink href="https://www.linkedin.com/in/patryk-krawczyk-b09413188">
+                    <StyledLink href="https://www.linkedin.com/in/patryk-krawczyk-js/">
                         <LinkedInIcon />
                     </StyledLink>
                 </StyledSocial>
