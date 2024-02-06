@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[6995],{6995:(a,e,r)=>{r.d(e,{SquareDrawer:()=>c});class c{async draw(a){const{drawSquare:e}=await r.e(2256).then(r.bind(r,2256));e(a)}getSidesCount(){return 4}}}}]);
+//# sourceMappingURL=6995.a57561a4.chunk.js.map

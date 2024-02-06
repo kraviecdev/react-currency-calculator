@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[8032],{8032:(e,a,c)=>{async function t(e){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("life",(async e=>{const{LifeUpdater:a}=await c.e(496).then(c.bind(c,496));return new a(e)}),a)}c.d(a,{loadLifeUpdater:()=>t})}}]);
+//# sourceMappingURL=8032.a94ff51e.chunk.js.map

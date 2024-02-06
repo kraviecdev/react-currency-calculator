@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[1787],{1787:(e,c,l)=>{l.d(c,{bounce:()=>n});var o=l(4864);const i=e=>{void 0===e.collisionMaxSpeed&&(e.collisionMaxSpeed=(0,o.qS)(e.options.collisions.maxSpeed)),e.velocity.length>e.collisionMaxSpeed&&(e.velocity.length=e.collisionMaxSpeed)};function n(e,c){(0,o.ee)((0,o.ch)(e),(0,o.ch)(c)),i(e),i(c)}}}]);
+//# sourceMappingURL=1787.dc26ec7c.chunk.js.map

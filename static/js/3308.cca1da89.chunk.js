@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[3308],{3308:(t,c,a)=>{async function r(t){let c=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await t.addInteractor("particlesAttract",(async t=>{const{Attractor:c}=await a.e(3552).then(a.bind(a,3552));return new c(t)}),c)}a.d(c,{loadParticlesAttractInteraction:()=>r})}}]);
+//# sourceMappingURL=3308.cca1da89.chunk.js.map

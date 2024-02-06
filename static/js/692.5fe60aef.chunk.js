@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[692],{7168:(a,e,c)=>{c.d(e,{I:()=>t});const t=["emoji"]},692:(a,e,c)=>{c.d(e,{loadEmojiShape:()=>n});var t=c(7168);async function n(a){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];const{EmojiDrawer:n}=await c.e(8992).then(c.bind(c,8992));await a.addShape(t.I,new n,e)}}}]);
+//# sourceMappingURL=692.5fe60aef.chunk.js.map

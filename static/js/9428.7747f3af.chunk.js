@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[9428],{9428:(a,c,t)=>{async function e(a){let c=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await a.addParticleUpdater("opacity",(async a=>{const{OpacityUpdater:c}=await t.e(9904).then(t.bind(t,9904));return new c(a)}),c)}t.d(c,{loadOpacityUpdater:()=>e})}}]);
+//# sourceMappingURL=9428.7747f3af.chunk.js.map

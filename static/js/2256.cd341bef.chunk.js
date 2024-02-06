@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[2256],{2256:(c,r,t)=>{t.d(r,{drawSquare:()=>u});const a=Math.sqrt(2),e=2;function u(c){const{context:r,radius:t}=c,u=t/a,n=u*e;r.rect(-u,-u,n,n)}}}]);
+//# sourceMappingURL=2256.cd341bef.chunk.js.map

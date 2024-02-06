@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[8116],{8116:(e,a,c)=>{async function n(e){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addMover("base",(async()=>{const{BaseMover:e}=await c.e(9884).then(c.bind(c,9884));return new e}),a)}c.d(a,{loadBaseMover:()=>n})}}]);
+//# sourceMappingURL=8116.36129191.chunk.js.map

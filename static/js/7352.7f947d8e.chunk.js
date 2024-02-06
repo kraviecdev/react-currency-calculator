@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[7352],{7352:(a,e,t)=>{async function c(a){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await a.addParticleUpdater("outModes",(async a=>{const{OutOfCanvasUpdater:e}=await t.e(2240).then(t.bind(t,2240));return new e(a)}),e)}t.d(e,{loadOutModesUpdater:()=>c})}}]);
+//# sourceMappingURL=7352.7f947d8e.chunk.js.map

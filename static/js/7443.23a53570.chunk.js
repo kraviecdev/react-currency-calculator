@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[7443],{7443:(a,e,c)=>{async function r(a){let e=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await a.addMover("parallax",(async()=>{const{ParallaxMover:a}=await c.e(8072).then(c.bind(c,8072));return new a}),e)}c.d(e,{loadParallaxMover:()=>r})}}]);
+//# sourceMappingURL=7443.23a53570.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[500],{500:(e,a,c)=>{c.d(a,{Pauser:()=>t});var r=c(4864);class t extends r.Ef{constructor(e){super(e),this.handleClickMode=e=>{if("pause"!==e)return;const a=this.container;a.animationStatus?a.pause():a.play()}}clear(){}init(){}async interact(){}isEnabled(){return!0}reset(){}}}}]);
+//# sourceMappingURL=500.29b8e6ab.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[2820],{2820:(e,t,a)=>{async function c(e){let t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addParticleUpdater("rotate",(async e=>{const{RotateUpdater:t}=await a.e(5e3).then(a.bind(a,5e3));return new t(e)}),t)}a.d(t,{loadRotateUpdater:()=>c})}}]);
+//# sourceMappingURL=2820.e3f4a732.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[9472],{9472:(c,a,e)=>{async function t(c){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await c.addInteractor("particlesCollisions",(async c=>{const{Collider:a}=await e.e(3356).then(e.bind(e,3356));return new a(c)}),a)}e.d(a,{loadParticlesCollisionsInteraction:()=>t})}}]);
+//# sourceMappingURL=9472.3082d2cb.chunk.js.map

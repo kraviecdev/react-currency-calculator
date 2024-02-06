@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[1072],{1072:(e,a,t)=>{async function c(e){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await e.addInteractor("externalSlow",(async e=>{const{Slower:a}=await t.e(5188).then(t.bind(t,5188));return new a(e)}),a)}t.d(a,{loadExternalSlowInteraction:()=>c})}}]);
+//# sourceMappingURL=1072.9a7509ec.chunk.js.map

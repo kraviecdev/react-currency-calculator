@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[2780],{2780:(t,a,c)=>{async function e(t){let a=!(arguments.length>1&&void 0!==arguments[1])||arguments[1];await t.addInteractor("externalAttract",(async a=>{const{Attractor:e}=await c.e(4457).then(c.bind(c,4457));return new e(t,a)}),a)}c.d(a,{loadExternalAttractInteraction:()=>e})}}]);
+//# sourceMappingURL=2780.22f8b197.chunk.js.map

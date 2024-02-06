@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_currency_calculator=self.webpackChunkreact_currency_calculator||[]).push([[2152],{2152:(a,c,l)=>{function e(a){const{context:c,particle:l,radius:e,opacity:r}=a,t=l.emojiData,o=2*e,u=c.globalAlpha;t&&(c.globalAlpha=r,c.drawImage(t,-e,-e,o,o),c.globalAlpha=u)}l.d(c,{drawEmoji:()=>e})}}]);
+//# sourceMappingURL=2152.244f5ebe.chunk.js.map
